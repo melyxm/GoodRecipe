@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RecipeBook</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+
+  <div id="user_nav">
+    <% if current_user %>
+
+      <%= link_to "Log out", log_out_path %>
+    <% else %>
+      <%= link_to "Sign up", sign_up_path %><br>
+      <%= link_to "Log in", log_in_path %><br>
+      <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+    <% end %>
+ </div>
+
+
+    <%= yield %>
+
+
+  </body>
+</html>

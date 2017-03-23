@@ -1,0 +1,18 @@
+<h1>Welcome to The Good Recipe</h1>
+<h3>We cook your recipe and deliver for only $20!</h3><br>
+
+<%= link_to 'Upload Recipe', new_recipe_path %>
+
+<% @recipes.each do |recipe| %><br>
+
+  <h2><%= recipe.title %></h2>
+
+  <h4>Recipe:</h4>
+  <p><%= recipe.description %></p>
+
+  <%= link_to "Make Payment", braintree_new_path %>
+  <br>
+  <br>
+
+<% end %>
+</p>

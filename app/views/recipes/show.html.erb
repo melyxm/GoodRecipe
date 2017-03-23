@@ -1,0 +1,11 @@
+<%= link_to 'Home', root_path %><br>
+
+<h1><%= @recipe.title %></h1>
+<br>
+<h3>Recipe:</h3>
+<p><%= @recipe.description %></p>
+<br>
+
+
+<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+<%= link_to 'Back', recipes_path %>
